@@ -1,0 +1,147 @@
+{
+  "kind": "build_request",
+  "title": "Romantic multi-page website with animated hearts/stars and two choice pages",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a landing page that displays the prompt text “be with me forever taruna🫴🏼🌷?” in a lovely cursive-style font, with a heart-filled background and floating hearts and stars animation. Place two clearly visible buttons underneath labeled “yass” and “definitely”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a website in which when they first open the website there is the sentence \"be with me forever taruna🫴🏼🌷?\" In a lovely cursive font, make hearts and stars float around, background should be filled with hearts, And underneath there is two options first option is \"yass\" second is \"definitely\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "On initial load, the landing page shows the prompt text exactly as provided, including emoji characters.",
+        "The landing page uses a cursive-style font for the prompt.",
+        "The landing page background is visually filled with hearts (pattern or repeated motif).",
+        "Hearts and stars visibly float around the screen (continuous animation).",
+        "Two buttons labeled exactly “yass” and “definitely” are displayed under the prompt and are clickable."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add client-side routing/navigation so clicking “yass” opens a separate page/route for the “yass” content and clicking “definitely” opens a separate page/route for the “definitely” content.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "when the person clicks \"yass\" take them to a seperate page... When the person clicks \"definitely\" it should take them to a seperate page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking “yass” navigates to a distinct URL route (not just scrolling) and renders only the “yass” page content.",
+        "Clicking “definitely” navigates to a distinct URL route (not just scrolling) and renders only the “definitely” page content.",
+        "Each page includes a simple way to return to the landing page (e.g., a “Back” link/button)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create the “yass” destination page with a very light pastel pink background, display the provided multi-line message text exactly as written, styled in a baby-pink bubble-style font, and include a small kiss-stamp graphic positioned on an edge of the page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "when the person clicks \"yass\" take them to a seperate page where it is written \" kannu-azaghuu, voice'u- aiyoooo 🤌🏼, figure'uh bestuuuu. \nWhen life gets hard they say God sends u someone to keep u happy, and your that some for me.\nLove youuu taruuu\" In a baby pink bubble font , background should be in a very light pastel pink,,with a little kiss stamped on the edge."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page background is a very light pastel pink.",
+        "The displayed text matches the user-provided message exactly (including punctuation, apostrophes, and emoji) and preserves line breaks.",
+        "The message is styled in a bubble-style font with a baby-pink color.",
+        "A kiss-stamp graphic is visible near an edge/corner of the page."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create the “definitely” destination page with a white background, render an illustration of two girls jumping with a heart between them (one with brown skin and curly hair; one with pale skin and wavy/straight hair), add the caption text “together forever- taru and shara” in a cherry-pink bubbly font with a heart near it, and animate stars that float and twinkle around the page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "When the person clicks \"definitely\" it should take them to a seperate page where there is a drawing of two girls jumping up in the air, one girl has brown skin and curly hair, another has pale skin with wavy straight hair, in middle of the two there a is heart, beneath the drawing write \" together forever- taru and shara\" with a heart near it and write it in a bubbly font in the cherry pink colour, background should be white, and stars should float and twinkle around"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page background is white.",
+        "An illustration is displayed showing two girls jumping with a heart between them, matching the described hair/skin tones.",
+        "The caption text is exactly “together forever- taru and shara”.",
+        "The caption is styled in a bubbly font and colored cherry pink.",
+        "A heart icon/graphic is shown near the caption.",
+        "Stars are visible and animate with both floating motion and a twinkling effect."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Establish a coherent, romantic visual theme across all pages (typography pairing, spacing, button styles, and animation style) that matches the pastel/pink aesthetic and remains consistent throughout the site.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Buttons, headings, and body text follow a consistent style system across pages (sizes, rounded corners, shadows, etc.).",
+        "Animations (floating/twinkling) look visually consistent (similar motion/opacity timing) across pages where they appear.",
+        "The overall palette stays within romantic pastel tones (avoiding default/un-styled components)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add required static image assets to the project under frontend/public/assets/generated and render them on the appropriate pages without routing images through the backend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist in frontend/public/assets/generated with the exact filenames specified in imageRequirements.required.",
+        "Landing page uses the heart-pattern background asset or an equivalent generated heart background asset.",
+        "The “yass” page displays the kiss-stamp image.",
+        "The “definitely” page displays the jumping-girls illustration image.",
+        "No backend endpoints are added/used for serving these images."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must not edit any files under frontend/src/components/ui (compose them instead).",
+    "Frontend must not modify immutable paths listed by the system (e.g., frontend/src/main.tsx, frontend/src/hooks/useInternetIdentity.ts/tsx, frontend/src/hooks/useActor.ts).",
+    "Do not introduce additional backend services; keep the app as a static front-end experience (no backend required for this request)."
+  ],
+  "nonGoals": [
+    "User accounts, authentication, or Internet Identity integration.",
+    "Persisting user choices or analytics.",
+    "Real-time communication features.",
+    "Any external APIs or databases."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Seamless heart pattern background (hearts-bg-tile.dim_512x512.png)",
+      "Kiss stamp graphic (kiss-stamp.dim_256x256.png)",
+      "Illustration of two girls jumping with a heart between them (two-girls-jumping-heart.dim_1200x900.png)",
+      "Small star sprite for twinkling (star-sprite.dim_128x128.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

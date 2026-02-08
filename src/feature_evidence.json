@@ -1,0 +1,128 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-landing-page-that-displays-the-prompt-text-be-with-me-forever-taruna-in-a-lovely-cursive-style-font-with-a-heart-filled-background-and-floating-hearts-and-stars-animation-place-two-clearly-visible-buttons-underneath-labeled-yass-and-definitely",
+      "featureTitle": "Create a landing page that displays the prompt text “be with me forever taruna🫴🏼🌷?” in a lovely cursive-style font, with a heart-filled background and floating hearts and stars animation. Place two clearly visible buttons underneath labeled “yass” and “definitely”.",
+      "files": [
+        "frontend/src/components/FloatingDecor.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-client-side-routing-navigation-so-clicking-yass-opens-a-separate-page-route-for-the-yass-content-and-clicking-definitely-opens-a-separate-page-route-for-the-definitely-content",
+      "featureTitle": "Add client-side routing/navigation so clicking “yass” opens a separate page/route for the “yass” content and clicking “definitely” opens a separate page/route for the “definitely” content.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/DefinitelyPage.tsx",
+        "frontend/src/pages/LandingPage.tsx",
+        "frontend/src/pages/YassPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-the-yass-destination-page-with-a-very-light-pastel-pink-background-display-the-provided-multi-line-message-text-exactly-as-written-styled-in-a-baby-pink-bubble-style-font-and-include-a-small-kiss-stamp-graphic-positioned-on-an-edge-of-the-page",
+      "featureTitle": "Create the “yass” destination page with a very light pastel pink background, display the provided multi-line message text exactly as written, styled in a baby-pink bubble-style font, and include a small kiss-stamp graphic positioned on an edge of the page.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/YassPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-the-definitely-destination-page-with-a-white-background-render-an-illustration-of-two-girls-jumping-with-a-heart-between-them-one-with-brown-skin-and-curly-hair-one-with-pale-skin-and-wavy-straight-hair-add-the-caption-text-together-forever-taru-and-shara-in-a-cherry-pink-bubbly-font-with-a-heart-near-it-and-animate-stars-that-float-and-twinkle-around-the-page",
+      "featureTitle": "Create the “definitely” destination page with a white background, render an illustration of two girls jumping with a heart between them (one with brown skin and curly hair; one with pale skin and wavy/straight hair), add the caption text “together forever- taru and shara” in a cherry-pink bubbly font with a heart near it, and animate stars that float and twinkle around the page.",
+      "files": [
+        "frontend/src/components/TwinklingStars.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/DefinitelyPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-establish-a-coherent-romantic-visual-theme-across-all-pages-typography-pairing-spacing-button-styles-and-animation-style-that-matches-the-pastel-pink-aesthetic-and-remains-consistent-throughout-the-site",
+      "featureTitle": "Establish a coherent, romantic visual theme across all pages (typography pairing, spacing, button styles, and animation style) that matches the pastel/pink aesthetic and remains consistent throughout the site.",
+      "files": [
+        "frontend/src/components/RomanticButton.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/DefinitelyPage.tsx",
+        "frontend/src/pages/LandingPage.tsx",
+        "frontend/src/pages/YassPage.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-required-static-image-assets-to-the-project-under-frontend-public-assets-generated-and-render-them-on-the-appropriate-pages-without-routing-images-through-the-backend",
+      "featureTitle": "Add required static image assets to the project under frontend/public/assets/generated and render them on the appropriate pages without routing images through the backend.",
+      "files": [
+        "frontend/src/pages/DefinitelyPage.tsx",
+        "frontend/src/pages/LandingPage.tsx",
+        "frontend/src/pages/YassPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

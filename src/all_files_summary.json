@@ -1,0 +1,21 @@
+{
+  "backend/main.mo": "Empty Motoko actor serving as backend placeholder.",
+  "feature_evidence.json": "Metadata describing implemented romantic UI features and their associated frontend files.",
+  "frontend-file-summaries.txt": "Prewritten summaries for multiple frontend components and pages.",
+  "frontend/index.css": "Base Tailwind config with color variables and dark-mode overrides.",
+  "frontend/index.html": "HTML entry point mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "Root React component handling client-side routing between three pages.",
+  "frontend/src/components/FloatingDecor.tsx": "Generates animated floating heart and star emoji elements.",
+  "frontend/src/components/RomanticButton.tsx": "Styled reusable button component with romantic theme variants.",
+  "frontend/src/components/TwinklingStars.tsx": "Renders randomized animated star sprites for visual effects.",
+  "frontend/src/hooks/useActor.ts": "React hook creating and refreshing a backend actor based on user identity.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Authentication context and hooks for managing Internet Identity login state.",
+  "frontend/src/index.css": "Global styles, romantic theme variables, fonts, and component-level utilities.",
+  "frontend/src/lib/utils.ts": "Utility to merge Tailwind class names using clsx and tailwind-merge.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with React Query and Internet Identity providers before rendering App.",
+  "frontend/src/pages/DefinitelyPage.tsx": "Displays the 'definitely' page with star effects, a back button, an illustrated image, and a cherry-pink caption.",
+  "frontend/src/pages/LandingPage.tsx": "Renders the landing page with floating decor, a prompt message, and navigation buttons to the yass and definitely pages.",
+  "frontend/src/pages/YassPage.tsx": "Shows the 'yass' page with a back button, kiss-stamp graphic, and a styled multi-line romantic message.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, fonts, animations, container settings, and plugin integrations.",
+  "project_state.json": "Stores project metadata, feature requirements, image needs, and current implementation state for the romantic multi-page site."
+}

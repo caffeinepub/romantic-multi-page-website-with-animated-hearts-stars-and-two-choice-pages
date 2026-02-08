@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 1 0 0;
+        --foreground: 0.145 0 0;
+        --card: 1 0 0;
+        --card-foreground: 0.145 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.145 0 0;
+        --primary: 0.205 0 0;
+        --primary-foreground: 0.985 0 0;
+        --secondary: 0.97 0 0;
+        --secondary-foreground: 0.205 0 0;
+        --muted: 0.97 0 0;
+        --muted-foreground: 0.556 0 0;
+        --accent: 0.97 0 0;
+        --accent-foreground: 0.205 0 0;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.922 0 0;
+        --input: 0.922 0 0;
+        --ring: 0.708 0 0;
+        
+        /* Romantic color palette */
+        --romantic-pink: 0.75 0.15 350;
+        --romantic-pink-dark: 0.65 0.18 350;
+        --romantic-lavender: 0.72 0.12 310;
+        --romantic-lavender-dark: 0.62 0.15 310;
+        --romantic-deep: 0.35 0.08 340;
+        --baby-pink: 0.85 0.12 350;
+        --cherry-pink: 0.65 0.20 355;
+        --pastel-pink: 0.96 0.05 350;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Fredoka', sans-serif;
+    }
+}
+
+@layer components {
+  /* Cursive text styling */
+  .cursive-text {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    line-height: 1.3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Bubble text styling */
+  .bubble-text {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  /* Font utility classes */
+  .font-bubble {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+  }
+
+  /* Color utilities */
+  .text-romantic-deep {
+    color: oklch(var(--romantic-deep));
+  }
+
+  .text-baby-pink {
+    color: oklch(var(--baby-pink));
+  }
+
+  .text-cherry-pink {
+    color: oklch(var(--cherry-pink));
+  }
+
+  .fill-cherry-pink {
+    fill: oklch(var(--cherry-pink));
+  }
+
+  .bg-romantic-pink {
+    background-color: oklch(var(--romantic-pink));
+  }
+
+  .bg-romantic-pink-dark {
+    background-color: oklch(var(--romantic-pink-dark));
+  }
+
+  .bg-romantic-lavender {
+    background-color: oklch(var(--romantic-lavender));
+  }
+
+  .bg-romantic-lavender-dark {
+    background-color: oklch(var(--romantic-lavender-dark));
+  }
+
+  /* Landing page with hearts background */
+  .landing-page {
+    background: linear-gradient(135deg, 
+      oklch(0.98 0.03 350) 0%, 
+      oklch(0.95 0.05 340) 50%, 
+      oklch(0.97 0.04 355) 100%
+    );
+    background-image: 
+      url('/assets/generated/hearts-bg-tile.dim_512x512.png'),
+      linear-gradient(135deg, 
+        oklch(0.98 0.03 350) 0%, 
+        oklch(0.95 0.05 340) 50%, 
+        oklch(0.97 0.04 355) 100%
+      );
+    background-size: 256px 256px, cover;
+    background-repeat: repeat, no-repeat;
+    background-blend-mode: soft-light, normal;
+  }
+
+  /* Yass page with pastel pink background */
+  .yass-page {
+    background: oklch(var(--pastel-pink));
+  }
+
+  /* Definitely page white background (already set in component) */
+  .definitely-page {
+    background: white;
+  }
+
+  /* Romantic button shadow */
+  .shadow-romantic {
+    box-shadow: 0 4px 14px 0 rgba(255, 105, 180, 0.25);
+  }
+
+  .shadow-romantic-lg {
+    box-shadow: 0 8px 24px 0 rgba(255, 105, 180, 0.35);
+  }
+
+  /* Floating decoration container */
+  .floating-decor-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* Floating items (hearts and stars) */
+  .floating-item {
+    position: absolute;
+    bottom: -50px;
+    animation: float-up linear infinite;
+    opacity: 0.7;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  /* Twinkling stars container */
+  .twinkling-stars-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* Twinkling star */
+  .twinkling-star {
+    position: absolute;
+    animation: twinkle ease-in-out infinite, float-gentle linear infinite;
+    opacity: 0.6;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes float-up {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    90% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    50% {
+      transform: translateY(-5px) translateX(-5px);
+    }
+    75% {
+      transform: translateY(-15px) translateX(3px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-delay {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    animation: fade-in-delay 1s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+}

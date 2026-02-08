@@ -1,0 +1,216 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Romantic multi-page static site with animated hearts/stars and two choice pages",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement the landing page with cursive prompt text, heart-pattern background, floating hearts/stars animation, and two choice buttons.",
+      "acceptanceCriteria": [
+        "On initial load, the landing page shows the prompt text exactly as provided, including emoji characters.",
+        "The landing page uses a cursive-style font for the prompt.",
+        "The landing page background is visually filled with hearts (pattern or repeated motif).",
+        "Hearts and stars visibly float around the screen (continuous animation).",
+        "Two buttons labeled exactly “yass” and “definitely” are displayed under the prompt and are clickable."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "create",
+          "description": "Create the landing page UI rendering the exact prompt text “be with me forever taruna🫴🏼🌷?” in a cursive-style font, with two prominent buttons labeled “yass” and “definitely”, and include the floating hearts/stars overlay component."
+        },
+        {
+          "path": "frontend/src/components/FloatingDecor.tsx",
+          "operation": "create",
+          "description": "Create a reusable floating decoration overlay that renders animated hearts and stars (e.g., unicode/SVG/CSS shapes) as absolutely-positioned elements with continuous floating motion to be used on the landing page. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global styles/Tailwind directives plus custom classes for the romantic theme, including a hearts-tile background style that uses frontend/public/assets/generated/hearts-bg-tile.dim_512x512.png and keyframes for floating hearts/stars."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add client-side routing so the two landing buttons navigate to distinct routes, with back navigation from each destination page.",
+      "acceptanceCriteria": [
+        "Clicking “yass” navigates to a distinct URL route (not just scrolling) and renders only the “yass” page content.",
+        "Clicking “definitely” navigates to a distinct URL route (not just scrolling) and renders only the “definitely” page content.",
+        "Each page includes a simple way to return to the landing page (e.g., a “Back” link/button)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Implement a simple client-side router (History API based) that maps routes for / (landing), /yass, and /definitely, rendering only the matched page component and handling back/forward navigation."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire the “yass” and “definitely” buttons to client-side navigation to /yass and /definitely using the app router’s navigate helper."
+        },
+        {
+          "path": "frontend/src/pages/YassPage.tsx",
+          "operation": "create",
+          "description": "Create the /yass route page shell and include a Back control that returns to / via client-side navigation."
+        },
+        {
+          "path": "frontend/src/pages/DefinitelyPage.tsx",
+          "operation": "create",
+          "description": "Create the /definitely route page shell and include a Back control that returns to / via client-side navigation."
+        },
+        {
+          "path": "frontend/src/router/useClientRouter.ts",
+          "operation": "create",
+          "description": "Add a small hook/util that exposes currentPath and navigate(to) (pushState + popstate listener) for use by App and pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build the “yass” page with pastel pink background, exact multi-line message in baby-pink bubble font, and a kiss-stamp graphic on an edge.",
+      "acceptanceCriteria": [
+        "The page background is a very light pastel pink.",
+        "The displayed text matches the user-provided message exactly (including punctuation, apostrophes, and emoji) and preserves line breaks.",
+        "The message is styled in a bubble-style font with a baby-pink color.",
+        "A kiss-stamp graphic is visible near an edge/corner of the page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/YassPage.tsx",
+          "operation": "modify",
+          "description": "Implement the yass page content: apply very light pastel pink background, render the exact multi-line message text preserving line breaks, style it with a bubble-like font treatment in baby-pink, and position the kiss graphic using frontend/public/assets/generated/kiss-stamp.dim_256x256.png near an edge/corner."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add/adjust theme classes for the yass page (pastel pink background, bubble-style typography styling, spacing) to ensure consistent rendering and preserved line breaks."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build the “definitely” page with white background, jumping-girls illustration, cherry-pink bubbly caption with heart, and floating+twinkling star animations.",
+      "acceptanceCriteria": [
+        "The page background is white.",
+        "An illustration is displayed showing two girls jumping with a heart between them, matching the described hair/skin tones.",
+        "The caption text is exactly “together forever- taru and shara”.",
+        "The caption is styled in a bubbly font and colored cherry pink.",
+        "A heart icon/graphic is shown near the caption.",
+        "Stars are visible and animate with both floating motion and a twinkling effect."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/DefinitelyPage.tsx",
+          "operation": "modify",
+          "description": "Implement the definitely page layout with a white background, render the illustration using frontend/public/assets/generated/two-girls-jumping-heart.dim_1200x900.png, add the exact caption “together forever- taru and shara” styled in a cherry-pink bubbly font with a heart graphic near it, and include an animated star field using the star sprite frontend/public/assets/generated/star-sprite.dim_128x128.png with floating + twinkling effects."
+        },
+        {
+          "path": "frontend/src/components/TwinklingStars.tsx",
+          "operation": "create",
+          "description": "Create a reusable overlay component that renders multiple star sprites (frontend/public/assets/generated/star-sprite.dim_128x128.png) with combined floating motion and twinkling opacity/scale animation for the definitely page. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add keyframes/classes to support star floating and twinkling animations (consistent timing/easing with the landing page decor)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply a consistent romantic visual theme across all pages (typography, spacing, button styles, and animation language).",
+      "acceptanceCriteria": [
+        "Buttons, headings, and body text follow a consistent style system across pages (sizes, rounded corners, shadows, etc.).",
+        "Animations (floating/twinkling) look visually consistent (similar motion/opacity timing) across pages where they appear.",
+        "The overall palette stays within romantic pastel tones (avoiding default/un-styled components)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/RomanticLayout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout wrapper that centralizes page spacing, max-width, and consistent romantic presentation (shared header/back placement, consistent padding) and is used by Landing/Yass/Definitely pages. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/RomanticButton.tsx",
+          "operation": "create",
+          "description": "Create a styled button component (rounded, soft shadow, consistent sizing) used for the landing choices and Back actions to keep button styling consistent site-wide. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Adopt RomanticLayout and RomanticButton for consistent typography/spacing/button styling, and ensure the landing animation styling matches the site-wide motion language."
+        },
+        {
+          "path": "frontend/src/pages/YassPage.tsx",
+          "operation": "modify",
+          "description": "Adopt RomanticLayout and RomanticButton for consistent typography/spacing/button styling on the yass page."
+        },
+        {
+          "path": "frontend/src/pages/DefinitelyPage.tsx",
+          "operation": "modify",
+          "description": "Adopt RomanticLayout and RomanticButton for consistent typography/spacing/button styling on the definitely page, and ensure twinkling star motion matches the shared animation timing."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens for the romantic palette and register custom keyframes/animations (float + twinkle) so animations and colors can be applied consistently across pages via utility classes."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global CSS variables and base typography defaults that support a cohesive romantic pastel/pink aesthetic across all pages (including cursive prompt styling and bubbly captions)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add required generated static image assets under frontend/public/assets/generated and render them on the correct pages without backend involvement.",
+      "acceptanceCriteria": [
+        "Generated images exist in frontend/public/assets/generated with the exact filenames specified in imageRequirements.required.",
+        "Landing page uses the heart-pattern background asset or an equivalent generated heart background asset.",
+        "The “yass” page displays the kiss-stamp image.",
+        "The “definitely” page displays the jumping-girls illustration image.",
+        "No backend endpoints are added/used for serving these images."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/hearts-bg-tile.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated seamless heart pattern background image as a static asset at the exact required path/filename."
+        },
+        {
+          "path": "frontend/public/assets/generated/kiss-stamp.dim_256x256.png",
+          "operation": "create",
+          "description": "Add the generated kiss stamp graphic image as a static asset at the exact required path/filename."
+        },
+        {
+          "path": "frontend/public/assets/generated/two-girls-jumping-heart.dim_1200x900.png",
+          "operation": "create",
+          "description": "Add the generated illustration image as a static asset at the exact required path/filename."
+        },
+        {
+          "path": "frontend/public/assets/generated/star-sprite.dim_128x128.png",
+          "operation": "create",
+          "description": "Add the generated star sprite image as a static asset at the exact required path/filename."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Ensure the landing page uses frontend/public/assets/generated/hearts-bg-tile.dim_512x512.png for the heart-filled background (via CSS background tiling) and does not load images via any backend calls."
+        },
+        {
+          "path": "frontend/src/pages/YassPage.tsx",
+          "operation": "modify",
+          "description": "Ensure the yass page renders frontend/public/assets/generated/kiss-stamp.dim_256x256.png as a positioned decorative image and does not load images via any backend calls."
+        },
+        {
+          "path": "frontend/src/pages/DefinitelyPage.tsx",
+          "operation": "modify",
+          "description": "Ensure the definitely page renders frontend/public/assets/generated/two-girls-jumping-heart.dim_1200x900.png and uses frontend/public/assets/generated/star-sprite.dim_128x128.png for star animations, with no backend image serving."
+        }
+      ]
+    }
+  ]
+}

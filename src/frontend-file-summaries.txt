@@ -1,0 +1,12 @@
+{
+  "frontend/src/App.tsx": "Main app component implementing client-side routing with History API to navigate between landing, yass, and definitely pages.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page displaying the cursive prompt text with hearts background, floating hearts/stars animation, and two choice buttons.",
+  "frontend/src/pages/YassPage.tsx": "Yass destination page with pastel pink background, multi-line message in baby-pink bubble font, kiss stamp decoration, and back button.",
+  "frontend/src/pages/DefinitelyPage.tsx": "Definitely destination page with white background, jumping girls illustration, cherry-pink caption with heart icon, twinkling stars, and back button.",
+  "frontend/src/components/FloatingDecor.tsx": "Reusable component rendering animated floating hearts and stars with randomized positions, delays, and durations for the landing page.",
+  "frontend/src/components/TwinklingStars.tsx": "Reusable component rendering star sprites with combined twinkling and floating animations for the definitely page.",
+  "frontend/src/components/RomanticButton.tsx": "Styled button component with romantic theme variants (primary, secondary, ghost) and consistent sizing for use across all pages.",
+  "frontend/src/index.css": "Global styles with romantic color palette in OKLCH, custom fonts (Dancing Script cursive and Fredoka bubble), page backgrounds, and animation keyframes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color tokens, custom fonts, shadow utilities, and animation keyframes for the romantic theme.",
+  "frontend/src/lib/utils.ts": "Utility function for merging Tailwind CSS classes using clsx and tailwind-merge."
+}
